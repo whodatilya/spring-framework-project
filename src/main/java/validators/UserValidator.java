@@ -25,7 +25,7 @@ public class UserValidator implements Validator {
     public void validate(Object obj, Errors errors) {
         RegistrationDto registrationDto = (RegistrationDto) obj;
         ValidationUtils.rejectIfEmpty(errors, "firstName", "firstName", "Не указано Имя");
-        ValidationUtils.rejectIfEmpty(errors, "lastName", "lastName", "Не указано Фамилия");
+        ValidationUtils.rejectIfEmpty(errors, "lastName", "lastName", "Не указана Фамилия");
         ValidationUtils.rejectIfEmpty(errors, "nickname", "nickname", "Не указан Логин");
         ValidationUtils.rejectIfEmpty(errors, "password", "password", "Не указан Пароль");
         ValidationUtils.rejectIfEmpty(errors, "consent", "consent", "Не указано Согласие");

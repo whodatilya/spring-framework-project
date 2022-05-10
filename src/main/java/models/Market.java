@@ -23,7 +23,7 @@ public class Market {
     private String name;
 
     @OneToMany(mappedBy = "market")
-    private List<Post> products;
+    private List<Post> posts;
 
     @OneToMany
     private List<User> shopAdmins;

@@ -6,12 +6,15 @@ import lombok.*;
 import javax.persistence.*;
 import java.util.List;
 
-@Data
+@Setter
+@Getter
+@EqualsAndHashCode
+@ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-@EqualsAndHashCode
+@Entity
+@Table(name = "users")
 public class User
 {
     @Id

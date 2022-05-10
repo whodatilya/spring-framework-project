@@ -13,7 +13,7 @@ import repositories.UsersRepository;
 import java.util.List;
 
 @Service("userService")
-public class UsersServicesImpl implements UserService {
+public class UserServicesImpl implements UserService {
 
     @Autowired
     private UsersRepository usersRepository;

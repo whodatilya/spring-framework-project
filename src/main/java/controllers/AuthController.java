@@ -29,7 +29,7 @@ public class AuthController {
         try {
             userService.signUp(registrationDto);
         } catch (UserAlreadyExistException e) {
-            modelAndView.addObject("registrationStatus", "Пользователь с таким email уже существует");
+            modelAndView.addObject("registrationStatus", "Пользователь с таким nickname уже существует");
             modelAndView.setViewName("signUp");
             return modelAndView;
         }

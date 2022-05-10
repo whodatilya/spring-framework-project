@@ -2,12 +2,15 @@ package models;
 
 import lombok.*;
 import javax.persistence.*;
-@Data
+
+
+@Setter
+@Getter
+@EqualsAndHashCode
+@ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-@EqualsAndHashCode
 @Entity
 @Table(name = "auth")
 public class Auth {

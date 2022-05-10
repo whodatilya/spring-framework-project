@@ -28,15 +28,15 @@ public class Post  {
     @Column(name = "phone_number")
     private String phoneNumber;
 
+    @ManyToOne
+    private Market market;
+
     @ManyToMany
     @JoinTable(
             name = "bucket",
-            joinColumns = @JoinColumn(name = "product_id"),
+            joinColumns = @JoinColumn(name = "post_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id")
     )
-
-    @ManyToOne
-    private Market market;
 
     private List<User> usersWhoAddedToBucket;
 
@@ -44,7 +44,7 @@ public class Post  {
     @ManyToMany
     @JoinTable(
             name = "favourites",
-            joinColumns = @JoinColumn(name = "product_id"),
+            joinColumns = @JoinColumn(name = "post_id"),
             inverseJoinColumns = @JoinColumn(name = "user_id")
     )
 
