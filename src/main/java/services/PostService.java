@@ -1,9 +1,9 @@
 package services;
 
-import forms.PostForm;
+import dtos.PostDto;
 import models.Post;
 
 
 public interface PostService {
-    Post createNew(PostForm postForm);
+    Post createNew(PostDto postDto);
 }

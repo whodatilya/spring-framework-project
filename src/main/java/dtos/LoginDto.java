@@ -1,16 +1,15 @@
-package forms;
+package dtos;
 
 import lombok.*;
 
-@Data
+@Setter
+@Getter
+@EqualsAndHashCode
+@ToString
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
-@EqualsAndHashCode
-public class UserForm
-{
+public class LoginDto {
     private String nickname;
     private String password;
 }
-

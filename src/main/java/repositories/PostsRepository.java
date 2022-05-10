@@ -1,7 +1,9 @@
 package repositories;
 
 import models.Post;
+import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
-public interface PostsRepository extends CrudRepository<Post> {
-    Post findByArticle(String article);
+@Repository
+public interface PostsRepository extends JpaRepository<Post, Long> {
 }

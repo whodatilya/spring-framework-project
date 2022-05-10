@@ -1,61 +1,69 @@
 package services;
 
-import forms.LoginForm;
-import forms.UserForm;
-import models.User;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
-import repositories.AuthRepository;
+import org.springframework.stereotype.Service;
+import dtos.RegistrationDto;
+import dtos.UserDto;
+import enums.Role;
+import exceptions.UserAlreadyExistException;
+import models.User;
 import repositories.UsersRepository;
 
-import javax.servlet.http.Cookie;
-import java.util.UUID;
+import java.util.List;
 
-public class UserServiceImpl implements UserService {
+@Service("userService")
+public class UsersServicesImpl implements UserService {
 
+    @Autowired
     private UsersRepository usersRepository;
-    private AuthRepository authRepository;
+
+    @Autowired
     private PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UsersRepository usersRepository) {
-        this.usersRepository = usersRepository;
-        this.passwordEncoder = new BCryptPasswordEncoder();
-    }
-    public UserServiceImpl(UsersRepository usersRepository, AuthRepository authRepository) {
-        this.usersRepository = usersRepository;
-        this.authRepository = authRepository;
-        this.passwordEncoder = new BCryptPasswordEncoder();
+
+    @Override
+    public void addUser(UserDto userDto) {
+        User user = User.builder()
+                .lastName(userDto.getLastName())
+                .firstName(userDto.getFirstName())
+                .build();
+        usersRepository.save(user);
     }
 
     @Override
-    public User register(UserForm userForm) {
-        User user = new User();
-        user.setNickname(userForm.getNickname());
-
-        String passwordHash = new BCryptPasswordEncoder().encode(userForm.getPassword());
-
-        user.setPasswordHash(passwordHash);
-
-        return usersRepository.save(user);
-    }
-
-    @Override
-    public Cookie signIn(LoginForm loginForm) {
-        User user = usersRepository.findByLogin(loginForm.getNickname());
-
-        if (user != null) {
-            if (passwordEncoder.matches(loginForm.getPassword(), user.getPasswordHash())) {
-                System.out.println("Вход выполнен!");
-                String cookieValue = UUID.randomUUID().toString();
-                System.out.println(cookieValue);
-                Cookie cookie = new Cookie("auth", cookieValue);
-                cookie.setMaxAge(10 * 60 * 60);
-                return cookie;
-            } else {
-                System.out.println("Вход не выполнен!");
-            }
+    public void signUp(RegistrationDto userDto) {
+        if (!usersRepository.existsByNickname(userDto.getNickname())) {
+            User user = User.builder()
+                    .lastName(userDto.getLastName())
+                    .firstName(userDto.getFirstName())
+                    .nickname(userDto.getNickname())
+                    .passwordHash(passwordEncoder.encode(userDto.getPassword()))
+                    .role(Role.ROLE_USER)
+                    .build();
+            usersRepository.save(user);
+        } else {
+            throw new UserAlreadyExistException(String.format("Пользователь с nickname=%s уже существует", userDto.getNickname()));
         }
+    }
 
-        return null;
+    @Override
+    public List<User> getUsers() {
+        return (List<User>) usersRepository.findAll();
+    }
+
+    @Override
+    public User getUserById(Long id) {
+        return usersRepository.findById(id).get();
+    }
+
+    @Override
+    public int getUserCountByLastName(String lastName) {
+        return usersRepository.countUserByLastName(lastName);
+    }
+
+    @Override
+    public boolean emailDoesntExist(String email) {
+        return usersRepository.existsByNickname(email);
     }
 }
