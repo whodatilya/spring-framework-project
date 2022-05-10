@@ -16,7 +16,7 @@ public class ApplicationInitializer implements WebApplicationInitializer {
     public void onStartup(ServletContext servletContext) throws ServletException {
         AnnotationConfigWebApplicationContext context = new AnnotationConfigWebApplicationContext();
         context.register(ApplicationConfig.class);
-        context.setConfigLocation("configs");
+        context.setConfigLocation("ru.kpfu.itis.configs");
 
         ContextLoaderListener listener = new ContextLoaderListener(context);
         servletContext.addListener(listener);

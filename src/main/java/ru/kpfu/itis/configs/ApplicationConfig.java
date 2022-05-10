@@ -89,7 +89,7 @@ public class ApplicationConfig extends WebMvcConfigurationSupport {
         LocalContainerEntityManagerFactoryBean em
                 = new LocalContainerEntityManagerFactoryBean();
         em.setDataSource(dataSource());
-        em.setPackagesToScan("models");
+        em.setPackagesToScan("ru.kpfu.itis.models");
 
         JpaVendorAdapter vendorAdapter = new HibernateJpaVendorAdapter();
         em.setJpaVendorAdapter(vendorAdapter);
