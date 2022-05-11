@@ -2,13 +2,13 @@
 <html>
 <head>
     <link rel="stylesheet" href="/resources/css/registration.css">
-    <title>SigIn</title>
+    <title>SignIn</title>
 </head>
 <body>
-<div class="form-style-3">
-    <form method="post">
-        <fieldset>
-            <legend>Sign In</legend>
+<div id="wrapper">
+    <form method="post" id="signin">
+        <fieldset style="border: none">
+            <legend style="padding: 10px">Sign In</legend>
             <#if error??>
                 <h1>Неправильный логин или пароль</h1>
             </#if>
@@ -37,7 +37,7 @@
                        value=""/>
             </label>
         </fieldset>
-        <fieldset>
+        <fieldset style="border: none; text-align: center">
             <label>
                 <span>
                 </span>
