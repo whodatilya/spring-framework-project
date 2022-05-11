@@ -14,7 +14,7 @@
             </#if>
             <label for="nickname">
                 <span>
-                    Email
+                    Nickname
                     <span class="required">
                         *
                     </span>

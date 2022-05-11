@@ -2,7 +2,7 @@
 <html>
 <head>
     <link rel="stylesheet" href="/resources/css/registration.css">
-    <title>SigUp</title>
+    <title>SignUp</title>
 </head>
 <body>
 <div id="wrapper">
