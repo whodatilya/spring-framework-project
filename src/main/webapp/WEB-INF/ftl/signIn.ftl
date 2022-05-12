@@ -5,13 +5,14 @@
     <title>SignIn</title>
 </head>
 <body>
+<#if error??>
+    <h1>Неправильный логин или пароль</h1>
+</#if>
 <div id="wrapper">
     <form method="post" id="signin">
         <fieldset style="border: none">
             <legend style="padding: 10px">Sign In</legend>
-            <#if error??>
-                <h1>Неправильный логин или пароль</h1>
-            </#if>
+
             <label for="nickname">
                 <span>
                     Nickname

@@ -5,12 +5,13 @@
     <title>SignUp</title>
 </head>
 <body>
+<#if registrationStatus??>
+    <h1>${registrationStatus}</h1>
+</#if>
 <div id="wrapper">
     <form method="post" id="signin">
         <fieldset style="border: none">
-            <#if registrationStatus??>
-                <h1>${registrationStatus}</h1>
-            </#if>
+
             <legend style="padding: 10px">Sign Up</legend>
             <label for="nickname"><span>Nickname<span class="required">*</span></span><input type="text"
                                                                                                 class="input-field"
