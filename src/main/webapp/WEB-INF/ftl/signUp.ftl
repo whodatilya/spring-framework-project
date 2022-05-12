@@ -17,6 +17,7 @@
                                                                                                 class="input-field"
                                                                                                 name="nickname"
                                                                                                 value=""/></label>
+            <br>
             <label for="firstName"><span>First Name<span class="required">*</span></span><input type="text"
                                                                                                 class="input-field"
                                                                                                 name="firstName"
@@ -44,6 +45,7 @@
         </fieldset>
         <fieldset style="border: none; text-align: center">
             <label><span> </span><input type="submit" value="Submit"/></label>
+            <p>already have an account? <a href="/signIn">log in</a></p>
         </fieldset>
     </form>
 

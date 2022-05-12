@@ -25,6 +25,7 @@
                        name="nickname"
                        value=""/>
             </label>
+            <br>
             <label for="password">
                 <span>
                     Password
@@ -37,12 +38,14 @@
                        name="password"
                        value=""/>
             </label>
+            <br>
         </fieldset>
         <fieldset style="border: none; text-align: center">
             <label>
                 <span>
                 </span>
                 <input type="submit" value="Submit"/>
+                <p>don't have an account? <a href="/signUp">create now</a></p>
             </label>
         </fieldset>
     </form>
