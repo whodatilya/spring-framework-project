@@ -16,13 +16,13 @@ public class PostsController {
 
     private final PostService productService;
 
-    @GetMapping(value = "/posts")
+    @GetMapping(value = "/postAdd")
     @Secured({"ROLE_SHOP"})
     public String productAddPage() {
         return "postAddPage";
     }
 
-    @PostMapping( value = "/posts", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
+    @PostMapping( value = "/postAdd", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
     public String addProduct(@RequestBody() PostDto postDto) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.writeValueAsString(productService.createNew(postDto));
