@@ -43,7 +43,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.csrf().disable()
                 .authorizeRequests()
                 .antMatchers("/signUp").permitAll()
-                .antMatchers("/profile").authenticated()
+                .antMatchers("/profile", "/main", "/postAdd", "/advertisement").authenticated()
                 .and()
                 .formLogin()
                 .loginPage("/signIn")
@@ -60,10 +60,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logoutSuccessUrl("/signIn").permitAll()
                 .and()
                 .sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS);
-                /*.and()
-                .antMatchers("/signUp", "/signIn", "/main").permitAll()
-                .antMatchers("/profile", "/order").hasAnyRole(Role.ROLE_USER.name(), Role.ROLE_ADMIN.name())
-                .antMatchers("/admin").hasRole(Role.ROLE_ADMIN.name());*/
         http.addFilterAfter(cookieAuthFilter, UsernamePasswordAuthenticationFilter.class);
     }
 
