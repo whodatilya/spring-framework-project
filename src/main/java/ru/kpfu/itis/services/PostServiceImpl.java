@@ -6,7 +6,9 @@ import org.springframework.stereotype.Service;
 import ru.kpfu.itis.dtos.PostDto;
 import ru.kpfu.itis.repositories.PostsRepository;
 
-@Service
+import java.util.List;
+
+@Service("postService")
 public class PostServiceImpl implements PostService {
 
     @Autowired
@@ -20,5 +22,10 @@ public class PostServiceImpl implements PostService {
                 .phoneNumber(postDto.getPhone_number())
                 .build();
         return this.postsRepository.save(post);
+    }
+
+    @Override
+    public List<Post> findAllPosts() {
+        return null;
     }
 }

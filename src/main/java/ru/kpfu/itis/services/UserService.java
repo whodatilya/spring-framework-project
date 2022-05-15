@@ -9,8 +9,5 @@ import java.util.List;
 public interface UserService {
     void addUser(UserDto userDto);
     void signUp(RegistrationDto registrationDto);
-    List<User> getUsers();
-    User getUserById(Long id);
-    int getUserCountByLastName(String lastName);
     boolean nicknameDoesntExist(String email);
 }

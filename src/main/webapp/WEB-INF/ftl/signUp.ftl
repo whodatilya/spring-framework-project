@@ -6,7 +6,7 @@
 </head>
 <body>
 <#if registrationStatus??>
-    <h1>${registrationStatus}</h1>
+    <p style="text-align: center">${registrationStatus}</p>
 </#if>
 <div id="wrapper">
     <form method="post" id="signin">

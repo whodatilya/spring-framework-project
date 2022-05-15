@@ -7,8 +7,9 @@
 <body>
 <div class="topnav">
     <a class="active" href="/main">Home</a>
-    <a href="/signUp">Quit</a>
+    <a href="/logout">Quit</a>
     <a href="/postAdd">Create</a>
+    <p style="margin-left:20px; color: white"> ${user.firstName} ${user.lastName} </p>
 </div>
 
 <figure class="baha1493">
@@ -43,22 +44,5 @@
     </figcaption>
     <a href="/advertisement"></a>
 </figure>
-<figure class="baha1493">
-    <div class="image"><img src="https://lafaen.ru/wp-content/uploads/2020/05/00027263_2.jpg" alt="ls-sample3" /></div>
-    <figcaption>
-        <div class="date"><span class="day">01</span><span class="month">Dec</span></div>
-        <h3>30000 рублей</h3>
-        <p>
-
-            Оаоаоаоа оаоаоаа ээээыэыыэыээыэы......
-        </p>
-        <footer>
-            <div class="views"><i class="ion-eye"></i>928</div>
-        </footer>
-    </figcaption>
-    <a href="/advertisement"></a>
-</figure>
-
-
 </body>
 </html>

@@ -11,8 +11,8 @@
 <body>
 <div class="topnav">
     <a class="active" href="/main">Home</a>
-    <a href="/signUp">Quit</a>
-    <a href="/postAdd">Create</a>
+    <a href="/logout">Quit</a>
+    <p style="margin-left:20px; color: white"> ${user.firstName} ${user.lastName} </p>
 </div>
 <div class="form-style-3">
     <fieldset style="border: none">

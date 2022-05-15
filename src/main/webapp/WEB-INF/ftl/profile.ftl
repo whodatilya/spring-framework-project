@@ -5,10 +5,11 @@
     <title>Profile</title>
 </head>
 <body>
-    <h1> ${user.firstName} ${user.lastName} </h1>
+
 <div class="topnav">
     <a class="active" href="/main">Home</a>
-    <a href="/signUp">Quit</a>
+    <a href="/logout">Quit</a>
+    <p style="margin-left:20px; color: white"> ${user.firstName} ${user.lastName} </p>
 </div>
 </body>
 </html>

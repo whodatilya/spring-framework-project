@@ -6,7 +6,7 @@
 </head>
 <body>
 <#if error??>
-    <h1>Неправильный логин или пароль</h1>
+    <p style="text-align: center">Неправильный логин или пароль</p>
 </#if>
 <div id="wrapper">
     <form method="post" id="signin">

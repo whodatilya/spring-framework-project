@@ -7,18 +7,17 @@
 <body>
 <div class="topnav">
     <a class="active" href="/main">Home</a>
-    <a href="/signUp">Quit</a>
+    <a href="/logout">Quit</a>
 </div>
 
 <figure class="baha1493">
-    <div class="image"><img src="https://pbs.twimg.com/media/ESIc-KdWoAMyguJ.jpg:large" alt="ls-sample3"></div>
-    <div class="image"><img src="https://pbs.twimg.com/media/EfRfwjgXgAAgHBz.jpg" alt="ls-sample3"></div>
+    <div class="image"><img src="https://vip-1gl.ru/vipberrrt/2701Duplex-at-Beacon-Court-14.jpg" alt="ls-sample3"></div>
     <figcaption>
-        <h3>30000 рублей</h3>
+        <h3>10000 рублей</h3>
         <hr>
         <p>
 
-            Оаоаоаоа оаоаоаа ээээыэыыэыээыэы......
+            Сдадим ИМОшникам помойку для жизни.
         </p>
     </figcaption>
 </figure>

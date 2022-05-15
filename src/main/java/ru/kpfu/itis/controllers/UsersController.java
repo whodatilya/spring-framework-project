@@ -28,7 +28,7 @@ public class UsersController {
     public ModelAndView getProfile(Authentication authentication) {
         ModelAndView modelAndView = new ModelAndView();
         if (authentication == null) {
-            modelAndView.setViewName("redirect:/signin");
+            modelAndView.setViewName("redirect:/signIn");
             return modelAndView;
         }
         User user = (User) authentication.getPrincipal();
@@ -37,14 +37,6 @@ public class UsersController {
         return modelAndView;
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/users")
-    public ModelAndView users() {
-        ModelAndView modelAndView = new ModelAndView();
-        List<User> users = userService.getUsers();
-        modelAndView.addObject("users", users);
-        modelAndView.setViewName("userList");
-        return modelAndView;
-    }
 
     @RequestMapping(method = RequestMethod.POST, value = "/users")
     public String addUser(UserDto userDto) {
@@ -52,26 +44,5 @@ public class UsersController {
         return "redirect:/users";
     }
 
-    @RequestMapping(method = RequestMethod.GET, value = "/users/{id}")
-    public ModelAndView getUserById(@PathVariable Long id) {
-        ModelAndView modelAndView = new ModelAndView();
-        User user = userService.getUserById(id);
-        modelAndView.addObject("users", Arrays.asList(user));
-        modelAndView.setViewName("userAddPage");
-        return modelAndView;
-    }
-
-    @RequestMapping(method = RequestMethod.GET, value = "/search")
-    public ModelAndView getUserByLastName(@RequestParam(required = false) String lastName) {
-        ModelAndView modelAndView = new ModelAndView();
-        if (!StringUtils.isEmpty(lastName)) {
-            int userCountByLastName = userService.getUserCountByLastName(lastName);
-            modelAndView.addObject("usersCount", userCountByLastName);
-        } else {
-            modelAndView.addObject("usersCount", 0);
-        }
-        modelAndView.setViewName("userSearchPage");
-        return modelAndView;
-    }
 
 }

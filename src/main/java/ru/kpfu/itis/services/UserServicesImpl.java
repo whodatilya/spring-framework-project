@@ -47,20 +47,6 @@ public class UserServicesImpl implements UserService {
         }
     }
 
-    @Override
-    public List<User> getUsers() {
-        return (List<User>) usersRepository.findAll();
-    }
-
-    @Override
-    public User getUserById(Long id) {
-        return usersRepository.findById(id).get();
-    }
-
-    @Override
-    public int getUserCountByLastName(String lastName) {
-        return usersRepository.countUserByLastName(lastName);
-    }
 
     @Override
     public boolean nicknameDoesntExist(String email) {
