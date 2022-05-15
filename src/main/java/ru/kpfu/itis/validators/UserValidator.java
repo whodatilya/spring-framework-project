@@ -35,7 +35,7 @@ public class UserValidator implements Validator {
             errors.reject("nickname", "Неправильный nickname");
         }
 
-        if (!userService.emailDoesntExist(registrationDto.getNickname())) {
+        if (!userService.nicknameDoesntExist(registrationDto.getNickname())) {
             errors.reject("nickname", "Пользователь с таким логином существует");
         }
 

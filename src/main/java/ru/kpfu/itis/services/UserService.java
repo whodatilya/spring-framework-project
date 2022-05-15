@@ -12,5 +12,5 @@ public interface UserService {
     List<User> getUsers();
     User getUserById(Long id);
     int getUserCountByLastName(String lastName);
-    boolean emailDoesntExist(String email);
+    boolean nicknameDoesntExist(String email);
 }

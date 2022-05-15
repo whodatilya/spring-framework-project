@@ -63,7 +63,7 @@ public class UserServicesImpl implements UserService {
     }
 
     @Override
-    public boolean emailDoesntExist(String email) {
+    public boolean nicknameDoesntExist(String email) {
         return usersRepository.existsByNickname(email);
     }
 }
