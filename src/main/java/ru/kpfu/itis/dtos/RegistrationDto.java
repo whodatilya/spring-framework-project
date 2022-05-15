@@ -15,5 +15,4 @@ public class RegistrationDto {
     private String nickname;
     private String password;
     private String confirmPassword;
-    private Boolean consent;
 }

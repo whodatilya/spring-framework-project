@@ -38,10 +38,6 @@
                                                                                                             name="confirmPassword"
                                                                                                             value=""/></label>
             <br>
-            <label for="consent"><span>Consent<span class="required">*</span></span><input type="checkbox" class="input-field"
-                                                                                           name="consent"
-                                                                                           value="true"/></label>
-            <br>
         </fieldset>
         <fieldset style="border: none; text-align: center">
             <label><span> </span><input type="submit" value="Submit"/></label>

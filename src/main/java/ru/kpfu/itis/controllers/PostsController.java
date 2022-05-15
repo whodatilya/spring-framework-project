@@ -23,7 +23,7 @@ public class PostsController {
     }
 
     @PostMapping( value = "/postAdd", consumes = MediaType.APPLICATION_JSON_VALUE, produces = MediaType.APPLICATION_JSON_VALUE)
-    public String addProduct(@RequestBody() PostDto postDto) throws JsonProcessingException {
+    public String addPost(@RequestBody() PostDto postDto) throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
         return objectMapper.writeValueAsString(productService.createNew(postDto));
     }
