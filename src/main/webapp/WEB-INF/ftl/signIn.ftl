@@ -44,7 +44,7 @@
             <label>
                 <span>
                 </span>
-                <input type="submit" value="Submit"/>
+                <input class="btn btn-success" type="submit" value="Submit"/>
                 <p>don't have an account? <a href="/signUp">create now</a></p>
             </label>
         </fieldset>
